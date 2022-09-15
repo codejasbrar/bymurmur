@@ -60,17 +60,18 @@
         <span>
           
           <s class="price-item price-item--regular text-murmur-grey-dark">
-            <span>Was</span>
+            <span>Was {% if product.metafields.custom.this_bundle_product %} From {% endif %}</span>
             {{ compare_at_price | money }} 
           </s>
         </span>
           {%- endif -%}
       {%- endunless -%}
       <span class="visually-hidden visually-hidden--inline text-murmur-grey-dark">{{ 'products.product.price.sale_price' | t }}</span>
-      <span class="price-item price-item--sale price-item--last"> <span>Now</span>
+      <span class="price-item price-item--sale price-item--last"> <span>Now {% if product.metafields.custom.this_bundle_product %} From {% endif %}</span>
         {{ money_price }}
       </span>
     </div>
+
     {% comment %} 
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
       <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>

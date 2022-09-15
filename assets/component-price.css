@@ -24,7 +24,12 @@
 .price:not(.price--show-badge) .price-item--last:last-of-type {
   margin: 0;
 }
-
+.price__sale s.price-item {
+    white-space: nowrap;
+}
+.price .price__sale {
+    display: flex;
+}
 @media screen and (min-width: 750px) {
   .price {
     margin-bottom: 0;
@@ -97,6 +102,9 @@ span.price-item.price-item--sale {
 .price--on-sale .price__sale {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+}
+li.grid__item .price--on-sale .price__sale {
+    flex-wrap: wrap;
 }
