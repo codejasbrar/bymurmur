@@ -334,6 +334,7 @@ a.product__text {
 @media screen and (min-width: 750px) {
   .product__info-container .price--on-sale .price-item--regular {
     font-size: 1.0625em;
+    white-space: nowrap;
   }
 
   .product__info-container > *:first-child {
@@ -1801,26 +1802,22 @@ variant-radios[data-url='/products/picky-bundle'] + noscript + .product-form__in
 .colour-swatch:last-child {
   margin-right: 0px;
 }
-
+.grid__item .colour-swatch {
+    border: 0px solid #706f73;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 2px #fff;
+}
+.grid__item .product_swatch .colour-swatch{
+    border: 1px solid #706f73;  
+}
 .colour-swatch.active {
-  border: 2px solid #000/*706f73*/;
-  position: relative;
+  border: 0px solid #000/*706f73*/;
+  box-shadow:0 0 0 2px #fff, 0 0 0 3px #706f73;
 }
 .colour-swatch.active:after { 
     content: "";
-    position: absolute;
     background: url(https://cdn.shopify.com/s/files/1/0604/6525/0464/files/tick-svg.png);
     height: 16px;
     width: 16px;
-    z-index: 1;
-    top: 4px;
-    right: 0px;
-    filter: brightness(0);
-    background-size: 16px;
-    background-repeat: no-repeat;
-    background: #000;
-    left: 4px;
-    border-radius: 15px;
 }
 .select-variant-label {
   color: #706f73 !important;
@@ -1852,6 +1849,7 @@ li.cbb-also-bought-product .select-variant-label {
 li.cbb-also-bought-product .button-container {
   order: 4 !important;
   display: flex;
+  gap: 4px;
 }
 
 li.cbb-also-bought-product select {

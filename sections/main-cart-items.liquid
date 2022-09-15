@@ -352,9 +352,9 @@
             
                  
                   {%- if subtotal > 4800 -%}
-                    <p class="totals__subtotal-value" data-totals__subtotal="{{ subtotal  }}">{{ subtotal | plus:cart.total_discount  | money_with_currency }}</p>
+                    <p class="totals__subtotal-value" data-totals__subtotal="{{ subtotal  }}">{{ subtotal | plus:cart.total_discount  | money }}</p>
                   {%- else -%}
-                    <p class="totals__subtotal-value">{{ subtotal | plus: 350 | money_with_currency }}</p>
+                    <p class="totals__subtotal-value">{{ subtotal | plus: 350 | money }}</p>
                   {%- endif -%}
                 </div>
 
@@ -412,7 +412,7 @@
                   {%- if total_subtotal_price > 48 -%}
                     <p class="totals__subtotal-value" data-totals__subtotal="{{ subtotal}}">Free</p>
                   {%- else -%}
-                    <p class="totals__subtotal-value">£3.50 GBP</p>
+                    <p class="totals__subtotal-value">£3.50</p>
                   {%- endif -%}
                   
                   

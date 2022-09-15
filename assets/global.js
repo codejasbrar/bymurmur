@@ -7,9 +7,14 @@ function getFocusableElements(container) {
 }
 $("#Search-In-Modal").on("focus",function(){
   $(this).parents(".field").find(".search__button").hide();
+  $(this).parents(".field").find(".field__label").hide();  
 });
 $("#Search-In-Modal").on("focusout",function(){
-  $(this).parents(".field").find(".search__button").show();
+  var val = $(this).val();
+  if(val ==""){
+    $(this).parents(".field").find(".field__label").show();
+    $(this).parents(".field").find(".search__button").show();
+  }
 });
 document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
   summary.setAttribute('role', 'button')
@@ -1034,14 +1039,12 @@ function setFromPrice(element) {
         let maxMoneyFormat = parseFloat(maxMoney).toFixed(2);
         maxMoneyFormat = parseFloat(maxMoneyFormat);
         	// console.log("pr"+arr);
-        	console.log("max"+typeof maxMoneyFormat +"-"+maxMoney);
-        	console.log("min"+typeof parseFloat(minMoneyFormat)+"-"+minMoney);
+        	// console.log("max"+typeof maxMoneyFormat +"-"+maxMoney);
+        	// console.log("min"+typeof parseFloat(minMoneyFormat)+"-"+minMoney);
         if(maxMoneyFormat > 0.01 && maxMoneyFormat > minMoneyFormat && minMoneyFormat > 0.01){
-          console.log("from=>",maxMoneyFormat);
-        $(this).find('p.calculated-from-price s').html('From £'+parseFloat(maxMoneyFormat).toFixed(2));
+        $(this).find('p.calculated-from-price s').html('Was From £'+parseFloat(maxMoneyFormat).toFixed(2));
         }
         if(minMoneyFormat < 0.01 && maxMoneyFormat > minMoneyFormat && maxMoneyFormat > 0.01 ){
-         console.log("Now=>",maxMoneyFormat);
           $(this).find('p.calculated-now-price').html('Now £'+parseFloat(maxMoneyFormat).toFixed(2));        
         }        
         if(minMoneyFormat > 0.01){

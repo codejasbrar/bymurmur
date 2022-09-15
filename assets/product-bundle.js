@@ -215,7 +215,9 @@ class VariantSelectsBundle extends VariantSelects {
     // $originalPrice.textContent = `Was from ${currencySymbol}${parseFloat(
     //   total / ($bundleDiscountValue / 100)
     // ).toLocaleString()}`
+    if(c_total > 0){
     $originalPrice.textContent = `Was from ${currencySymbol}${parseFloat(c_total).toLocaleString()}`
+    }
     bundlePriceArray = []
     bundleCamparePriceArray = []
   }
