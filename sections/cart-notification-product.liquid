@@ -15,8 +15,8 @@
         <h3 class="cart-notification-product__name h4 nmaeTy">Product Qty:{{ item.quantity }}</h3>
         <!---<h3 class="cart-notification-product__name h4 nmaeTy">Price:{{ item.original_price | money }}</h3>--->
        <h3 class="cart-notification-product__name h4 nmaeTy">Price: <span></Spa>{{ item.product.price| money }}</span> <s>{{ item.product.compare_at_price | money }}</s></h3>
-     {% comment %} {% if item.variant.compare_at_price > item.variant.price %} Save {{ item.variant.compare_at_price | minus: item.variant.price | times: 100.0 | divided_by: item.variant.compare_at_price | money_without_currency | times: 100 | remove: '.0'}}%{% endif %}{% endcomment %}
-         {% if item.variant.compare_at_price > item.variant.price %}Discounted Price: {{ item.variant.compare_at_price | minus: item.variant.price | money}} {% endif %}
+     {% comment %} {% if item.variant.compare_at_price > item.variant.price %} Save {{ item.variant.compare_at_price | minus: item.variant.price | times: 100.0 | divided_by: item.variant.compare_at_price | money_without_currency | times: 100 | remove: '.0'}}%{% endif %}
+         {% if item.variant.compare_at_price > item.variant.price %}Discounted Price: {{ item.variant.compare_at_price | minus: item.variant.price | money}} {% endif %}{% endcomment %}
           <dl> 
             {%- unless item.product.has_only_default_variant -%}
               {%- for option in item.options_with_values -%}
